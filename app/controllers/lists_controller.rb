@@ -14,10 +14,9 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    # @lists = List.all
 
     if @list.save
-      redirect_to @lists, notice: 'list was successfully created.'
+      redirect_to @list, notice: 'list was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
